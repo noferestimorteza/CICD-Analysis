@@ -1,0 +1,15 @@
+★★★★★★
+RESULTS — LightGBM Baseline
+★★★★★★
+RMSE : 1136.1882 sec
+MAE  : 403.9285 sec
+R²   : 0.0676
+★★★★★★
+
+★★★★★★
+RESULTS — FT-Transformer
+★★★★★★
+RMSE : 720.7723 sec
+MAE  : 221.5756 sec
+R²   : 0.6248
+★★★★★★
