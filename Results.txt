@@ -22,3 +22,11 @@ RMSE : 5765.6572 sec
 MAE  : 812.1639 sec
 R²   : 0.0722
 ★★★★★★
+
+★★★★★★
+RESULTS — FT-Transformer
+★★★★★★
+RMSE : 3649.2482 sec
+MAE  : 451.6128 sec
+R²   : 0.6283
+★★★★★★
