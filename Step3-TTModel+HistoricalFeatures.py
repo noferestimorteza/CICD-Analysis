@@ -75,23 +75,7 @@ for col in ["hist_mean_5", "hist_std_5", "hist_median_5",
 
 print(f"  ✅ Added 6 historical run features (rolling window=5)")
 
-# ── Idea 2: Time since last run ───────────────────────────────────────────
-if time_col:
-    df[time_col] = pd.to_datetime(df[time_col], errors="coerce")
-    df["time_since_last_run"] = (
-        df.groupby("repo_workflow_id")[time_col]
-        .transform(lambda x: x.diff().dt.total_seconds())
-        .fillna(0)
-    )
-    # Cap at 30 days in seconds to avoid huge values
-    df["time_since_last_run"] = df["time_since_last_run"].clip(0, 30 * 24 * 3600)
-    print(f"  ✅ Added time_since_last_run feature")
-else:
-    # Approximate: use row gap within each workflow as a proxy
-    df["time_since_last_run"] = (
-        df.groupby("repo_workflow_id").cumcount()
-    ).astype(float)
-    print(f"  ✅ Added run_sequence_index as proxy for time_since_last_run")
+
 
 y_raw = df[TARGET_COL].values
 y = np.log1p(y_raw)  # log-transform target
