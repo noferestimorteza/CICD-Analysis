@@ -13,3 +13,12 @@ RMSE : 720.7723 sec
 MAE  : 221.5756 sec
 R²   : 0.6248
 ★★★★★★
+
+**********************************************Removing outliers: higher than average+3std *********************************************
+★★★★★★
+RESULTS — LightGBM Baseline
+★★★★★★
+RMSE : 5765.6572 sec
+MAE  : 812.1639 sec
+R²   : 0.0722
+★★★★★★
