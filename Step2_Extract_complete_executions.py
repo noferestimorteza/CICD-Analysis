@@ -96,14 +96,12 @@ if "metadata.run_started_at" in df.columns:
 if "metadata.head_commit.timestamp" in df.columns:
     df["commit_timestamp"] = pd.to_datetime(df["metadata.head_commit.timestamp"], errors="coerce")
 
-    print("Error in conversion order: difference should be calculated first.")
-
 
 if "metadata.run_started_at" in df.columns and "metadata.head_commit.timestamp" in df.columns:
     run_start = pd.to_datetime(df["metadata.run_started_at"])
     commit_ts = pd.to_datetime(df["metadata.head_commit.timestamp"], errors="coerce")
     df["commit_to_run_seconds"] = (run_start - commit_ts).dt.total_seconds()
-    df.drop(columns=["metadata.run_started_at", "run_start_dt","commit_timestamp", "metadata.head_commit.timestamp"], inplace=True, errors="ignore")
+    #df.drop(columns=["metadata.run_started_at", "run_start_dt","commit_timestamp", "metadata.head_commit.timestamp"], inplace=True, errors="ignore")
 df.drop(columns=["metadata.updated_at"], inplace=True, errors="ignore")
 
 # Save
